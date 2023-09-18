@@ -1,12 +1,545 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Homework 1</title>
-    </head>
-    <body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PDF</title>
+  </head>
+  <body>
+    <div class="heading">
+      <center>
         <p>
-            I did my homework!
+          <b>Gate Pass Management and Monitoring System using Raspberry Pi</b>
+          <br />Chada Lakshma Reddy1 , Arvapally Saatvik2 , Manan Pathak3 ,Dr
+          .Ramesh Karnati 4 <br /><sup>1,2,3,4</sup>Department of Computer
+          Science & Engineering, Vardhaman College of Engineering,<br />Shamshabad,
+          Hyderabad, INDIA<br />
+          <sup>1,2,3,4*</sup>Email: chadalakshmareddy@gmail.com,
+          arvapallysaatvik@gmail.com,<br />
+          mananpathak26@gmail.com, ramesh.krnt@vardhaman.org
         </p>
-        <img src="Lab1.jpg">
-    </body>
+      </center>
+    </div>
+    <div class="body">
+      <center>
+        <table width="900px">
+          <tr>
+            <td>
+              <p align="justify"><b>1. Abstract </b></p>
+              <p align="justify">
+                A significant amount of data is gathered on college premises
+                including tracking faculty and student attendance,
+                transportation information, and outside visitors. This data
+                needs to be gathered and maintained. Traditional methods include
+                having a designated authorized person manually record it. This
+                can be a difficult task at times, and a lot of time is wasted.
+                To solve this issue, we are developing an application that can
+                store it effectively and assist us in retrieving the important
+                data that is being generated and can be utilized for a variety
+                of different purposes. The system created could use scanner
+                machines to automatically fetch the data, which could then be
+                fed into the system and the application created is
+                user-friendly.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p align="justify">
+                <b>2. Keywords: </b> PHP, Server, Gate Pass Management,
+                Raspberry Pi, Cloud
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p align="justify"><b>3. Introduction</b></p>
+              <p align="justify">
+                "Gate pass management and monitoring system using Raspberry Pi"
+                is being developed to solve the problem of the existing manual
+                entering system. In any organization, authentication of the
+                people is the priority of the organization. In any organization,
+                the flow of people is to a great extent which could include
+                students and lecturers moving in and out, and visitors entering
+                the premises all the movements should be handled efficiently. To
+                overcome the problems of manual entry system which could have
+                problems such as an error in filling details, losing of
+                registers where the data was stored, etc. Gate pass management
+                and monitoring system help to solve problems efficiently. This
+                system is designed in such a manner that the person entering the
+                details does not require any formal knowledge. The interface is
+                user-friendly where only necessary data is stored.<br /><br />
+                The system is being built in such a way that it tries to avoid
+                generating any errors. The system also provides error messages
+                when invalid data is entered. The system created is error-free,
+                secure, and reliable. Log files can be generated whenever any
+                information is required for verifying the data. A gate pass
+                management system is an important tool for ensuring the security
+                and safety of any secured area. By allowing only authorized
+                individuals to enter and exit the area, it helps to prevent
+                unauthorized access.
+                <br /><br />
+                One of the key features of a gate pass management system is to
+                store data of people visiting the college. This system generally
+                stores an individual's name, photo, and the reason for their
+                visit, as well as the duration of their access. This information
+                allows the gate pass management system to monitor and control
+                access to the secured area, ensuring that only those with a
+                valid gate pass are allowed entry. In addition to controlling
+                access, a gate pass management system can also be used to
+                generate reports and logs of all access activity. This provides
+                a record of who has entered and exited the secured area, which
+                can be helpful for security purposes and for tracking the
+                movement of individuals within the area.<br /><br />
+                We have created a QR Code Scanner which is built using Raspberry
+                Pi whenever a student enters a college his CollegeId is scanned
+                and if it matches with the records in the database the LED light
+                blinks and the timings of the particular student is stored is in
+                cloud and if the id doesn’t match with the database the LED
+                doesn’t blink which means it is not present in the database.
+                <br /><br />
+                Another benefit of a gate pass management system is that it can
+                help to improve the overall efficiency and organization of the
+                secured area. By streamlining the process of granting access to
+                authorized individuals, the gate pass management system can help
+                reduce congestion and improve traffic flow in and out of the
+                area. This can help to improve the overall experience of those
+                visiting the secured area. Overall, a gate pass management
+                system is an essential tool for ensuring the security and safety
+                of any secured area. By controlling access and providing a
+                record of access activity, the gate pass management system can
+                help to prevent unauthorized access and improve the overall
+                efficiency and organization of the secured area.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p align="justify"><b>4. Literature Survey </b></p>
+              <p align="justify">
+                Prof. Archana S. Banait et al. proposed a system to track the
+                data of the students, faculty and visitor’s info using the RFID
+                reader and card and here if any visitors come the faculty need
+                to approve it and everything will be stored in the database.[1]
+                <br /><br />
+                Norizan Anwar et al. proposed the model UTAUT to determine the
+                acceptance of visitor. The main main of this project was knowing
+                the visitors where they are.[2] <br /><br />
+                S. Junaida et al. developed a VIMS Application and Design. This
+                captures new visiting record and assignment of visitor pass.
+                Visitor’s information in a database server in a particular
+                manner which helps to generate report and search a particular
+                thing. E-VIMS able to record visitor information during visitor
+                registration by using visitors Malaysia Government Multipurpose
+                Card (MyKad)[3].
+                <br /><br />
+                Prof. Abhay Gaidhani et al. paper aims for Gate pass using
+                Raspberry Pi. The motto of this paper was to save paper and use
+                technology like sending email and sms.[4] <br /><br />
+                Romy Jun A. Sunico et al. proposed a system which was able to
+                track the monitoring of students,visitors and employees entering
+                the college.The system's planning, design, creation,
+                deployment,and testing all followed the Rapid Application
+                Development (RAD) Model. Additionally,software like XAMPP,
+                MySQL, and PHP were used to create and implement the system. The
+                system developed had helped in monitoring who passed through the
+                premises and thus for the administration, this approach assisted
+                in generating feedback.[7]
+                <br /><br />
+                Divya Gaur et al. proposed a system which made it possible to
+                keep track of entry and exit actions inside the specified
+                premises efficiently and precisely. Since pen and paper could be
+                problematic for both visitors and the security staff, this
+                approach has helped eliminate their use.Recording all the
+                necessary data becomes simple if the administrator could learn
+                how to manage the system. The primary goal was to make the
+                administrator or appropriate authority's interface simple to
+                use.[8] <br /><br />
+                Yogesh S. Watile et.al in their work suggested a "Security
+                System for Industrial Gate And Generation of GatePass" . From
+                digital photos, the face recognition system automatically helps
+                in the identification and authentication of people. The PCA
+                technique was used to detect the face, extract its features, and
+                compare it to the existing database. The gate will open if the
+                face matches the existing database, and a gate pass will be
+                automatically generated if an unauthorized person is
+                recognized.[9]<br /><br />
+                Mr. M. Santhanaraj M.E. et.al in their work suggested a system
+                "Digital Gate Pass System Using Hybrid Application" . It
+                comprises a web application that security personnel, students,
+                and concerned HODs can use. The interface includes time
+                intervals and the reasons for exit, which are both stored in the
+                database. In this approach, students apply for exit with
+                reasons, the HOD reviews it from a different application
+                interface, and after approval, it is transferred to a personal
+                security interface where the approval can be viewed. HTML, CSS,
+                JavaScript, and for server communication in this system,PHP are
+                used. A Cordova plugin is used to package the entire system into
+                an app. This system makes student exits more effective.[10]
+                <br /><br />
+                Dr.S. Kanaga Suba Raja et.al proposed a system "Offline Security
+                Gate Operation In (ICMS) Identity Card Management System Using
+                Aadhaar ID". The proposed system enables authentication to be
+                registered with the Aadhaar id, validated and proper
+                identification to be done in a secured way for entry/exit
+                purposes. Aadhar Id is integrated with visitor pass management
+                for appointment, data is stored in local database and in offline
+                security it helps us easy to verify.When a person comes with
+                unique identification,offline access at the gate becomes easy as
+                only identification is required which reduces manpower and high
+                cost.[13] <br /><br />
+                S. Emima Princy et al. recommended a method in their paper
+                titled "Implementation of Cloud Server for Real Time Data
+                Storage using Raspberry Pi." A Raspberry Pi can be configured to
+                function as a private cloud server, which can be utilized as a
+                storage device for applications using real-time signals. Using
+                cloud platforms offered by particular cloud vendors, Raspberry
+                Pi is a less expensive microprocessor in which cloud computing
+                infrastructure can be achieved. The Raspberry Pi can be used as
+                a cloud server that stores data for real-time applications.[14]
+                <br /><br />
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p align="justify"><b>5. Methodology</b></p>
+              <p align="justify"><b>5.1 HyperText Markup Language(HTML) </b></p>
+              <p align="justify">
+                Hyper Text Markup Language is markup language for displaying
+                information sequentially in a browser. Technologies like JS and
+                CSS can help with it. HTML provides a meaningful description of
+                a web page's structure.The foundation of HTML pages are HTML
+                components. Images and other objects, like interactive forms,
+                can be embedded using HTML structures.[1] The HTML documents are
+                rendered into multimedia web pages by web browsers once they are
+                downloaded from a web server or local storage.Using HTML and
+                various elements, including image, text, and submit, a dynamic
+                website was developed such that security personnel could read
+                the details
+              </p>
+              <p align="justify"><b>5.2 Cascading Style Sheets (CSS): </b></p>
+              <p align="justify">
+                Cascading Style Sheets (CSS), is a style sheet language which is
+                used to present the information of a document created in a
+                markup language, such as HTML, in more ways. CSS is a tool which
+                is used alongside HTML and JavaScript.CSS was created to make it
+                possible to separate content and presentation, including design,
+                color, and font choices. This division can increase the web's
+                ability to access content.CSS provides rules for different
+                formatting.
+              </p>
+              <p align="justify"><b>5.3 JAVASCRIPT (JS): </b></p>
+              <p align="justify">
+                Along with HTML and CSS, JavaScript (JS) is a computer language
+                that is a fundamental component of the World Wide Web.
+                JavaScript, which makes use of third-party libraries, regulates
+                the client-side behaviour of web pages.[3] JavaScript is a
+                high-level, typically justin-time compiled language. It has
+                first-class functions, prototype-based object orientation, and
+                dynamic typing. It supports paradigms and is multi-paradigm.
+              </p>
+              <p align="justify"><b>5.4 Hypertext Preprocessor (PHP): </b></p>
+              <p align="justify">
+                It is a general-purpose scripting language. Proceeds on server
+                by an interpreter implemented as module. PHP can be used for
+                many programming tasks outside the web context, such as
+                standalone graphical applications. PHP supports a wide range of
+                protocols, including HTTP, POP3, SNMP, LDAP, IMAP, and many
+                others.[2] The PHP programming language allows you to control
+                which pages on your website visitors may access. PHP can manage
+                forms, which includes gathering user input via forms, saving it
+                to a database, and giving the user useful information.
+              </p>
+              <p align="justify"><b>5.5 MySql:</b></p>
+              <p align="justify">
+                Structured Query Language is a popular language for organizing
+                and retrieving database information., MySQL is a relational
+                database management system. MySQL is free and opensource
+                software. The queries include those for inserting, updating,
+                deleting, and selecting records as well as those for creating
+                and dropping tables.[5] It enables us to rapidly discover
+                essential data by arranging data into tables, rows, columns, and
+                indexes. For carrying out database tasks including creating,
+                maintaining, accessing, and finding the data it keeps, each
+                database has a unique.
+              </p>
+              <p align="justify"><b>5.6 XAMPP Server: </b></p>
+              <p align="justify">
+                The abbreviation XAMPP is made up of the letters X for
+                Cross-Platform, A for Apache, M for MySQL, and Ps for PHP and
+                Perl, respectively. It is an open-source collection of online
+                solutions that also contains command-line executables for
+                multiple servers including the Apache server, MariaDB, PHP, and
+                Perl modules.[4] XAMPP unables to host the website in our local
+                host before deploying in the main server to check if the
+                application is working correctly or not. It is a platform that
+                offers an appropriate setting for reviewing and confirming the
+                functionality of projects created using Apache, Perl, MySQL, and
+                PHP through the host's system. XAMPP serves as a representation
+                of the classification of solutions for various technologies. It
+                offers a framework for testing programmes made using various
+                technologies and a personal server.
+              </p>
+              <p align="justify"><b>5.7 Python: </b></p>
+              <p align="justify">
+                Python is a sophisticated language. Garbage collection and
+                dynamic typing are features of Python. Programming language
+                Python supports several paradigms. Functional programming and
+                aspect-oriented programming are supported by many of its
+                features, while object-oriented programming and structured
+                programming are also completely supported.[6] Python manages
+                memory via dynamic typing, reference counting, and a
+                cycle-detecting garbage collector.
+              </p>
+              <p align="justify"><b>5.8 Raspberry Pi: </b></p>
+              <p align="justify">
+                Raspberry Pi is a small, low-cost computer that is widely used
+                for various projects, including home automation and Internet of
+                Things (IoT) applications. It is a popular choice for building a
+                barcode scanner because it is inexpensive, has a small form
+                factor, and is easily programmable.
+              </p>
+              <p align="justify"><b>5.8.1 Raspberry Pi Implementation </b></p>
+              <p align="justify">
+                The information of student in premises can be extracted using
+                the barcode present in his id card. To access the information. A
+                barcode scanner is required. A barcode scanner is a device that
+                is used to read and interpret barcodes.<br /><br />
+                Once the software is installed and configured, Raspberry Pi and
+                barcode scanner are used to read and interpret barcodes. This
+                can be done using a simple Python script that reads the data
+                from the barcode scanner and displays it on the screen. All the
+                data of students is stored in the database.<br /><br />
+                Whenever student enters college, his CollegeID is being scanned
+                using barcode scanner. Raspberry pi checks with the database and
+                if it matches with the database a LED blink happens which means
+                it is successful and student can enter the college and if it
+                doesn't match then the LED doesn't blink.<br /><br />
+                Another benefit of using cloud storage for barcode scanning is
+                that it allows for easy sharing of data. With traditional
+                storage methods, data might be stored in a central location and
+                accessed by a limited number of people. With cloud storage, data
+                can be shared with multiple users, making it easier for teams to
+                collaborate and work together.
+              </p>
+              <p align="justify"><b>5.9 Working of Web Application: </b></p>
+              <p align="justify">
+                A dynamic website is built for a designated person at the gate
+                to monitor the inflow. This website is designed using HTML, CSS,
+                Bootstrap, and JavaScript.[7] This website has different
+                components i.e Student Data Entry, Faculty Data Entry, Visitor's
+                Data Entry, Student's Data Report, Faculty Data Report,
+                Visitor's Data Report, and College Transportation Raspberry
+                Data.<br /><br />
+                The website has to logins. The admin login and the security
+                log-in the security will be scanning the id of the student who
+                ever comes late. The scanning will be done by a pi attached to
+                it, and the data will be saved in the cloud and that is attached
+                to the database. Then here the admin logins can view who has
+                come late daily and they will be having logs day by day and
+                department-wise also.[10] If the student comes more than one
+                time late to college besides his roll number there will be a
+                frequency count so that the admins can easily see how many times
+                did the student come late. In this way, faculties are also done.
+                If the visitor comes generally, we will be writing every data
+                manually to reduce the paperwork we generated.[8]<br /><br />
+                Here if any visitor comes to the college first, we will be
+                taking the phone number and verify if he is a new user or an
+                existing user, if he is a new user we will be taking all the
+                details like to whom they are visiting, with how many people
+                they have come, what is the purpose of the visit and why are
+                they visiting the college. If the phone number is already
+                registered just we will be taking to whom they are visiting.[9]
+                Coming to transportation, generally, our security guards will
+                note down the details of the bus at what time the bus is
+                entering the college and at what time it is exiting the college
+                and they will be making the note of the kilometre reading every
+                day so that's the huge task so we have made it simple using this
+                application just we need to select the bus number and click on
+                submit the log data will be stored in the database. And finally,
+                we can view the report of each and everything in detail.[14] So
+                this makes easy to everyone and if issue comes, we can easily
+                fetch data and sort out the problem. Fig 1 represents the
+                architecture diagram of the system.
+              </p>
+              <center>
+                <img src="./images/img1.png" />
+                <p>Fig 1: Architecture Diagram</p>
+              </center>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p align="justify"><b>6. Result: </b></p>
+              <p align="justify">
+                Gate Pass Management and Monitoring System was constructed in
+                order to help us identify people who were entering late to the
+                college premises. Every faculty and student had a College Id,
+                which included a distinctive QR Code with information specific
+                to each group.[11].<br /><br />
+                A Raspberry Pi-connected QR Code Scanner was used to scan each
+                person as they entered thecampus. The generated data was
+                uploaded to the cloud for storage. The generated data is saved
+                in the database according to several parameters, which may
+                comprise multiple departments.[13]<br /><br />
+                The entry time of the student was also kept in this database,
+                which is highly useful information that allows us to create log
+                files that allow us to know the student's analysis in depth,HOD
+                and admins can view this information.[12]<br /><br />
+              </p>
+              <p align="justify">Fig2-Fig10 below are some snapshots of our application:</p>
+              <center>
+                <img src="./images/img2.png" />
+                <p>Fig 2</p>
+
+                <img src="./images/img3.png" />
+                <p>Fig 3</p>
+
+                <img src="./images/img4.png" />
+                <p>Fig 4</p>
+
+                <img src="./images/img5.png" />
+                <p>Fig 5</p>
+
+                <img src="./images/img6.png" />
+                <p>Fig 6</p>
+
+                <img src="./images/img7.png" />
+                <p>Fig 7</p>
+
+                <img src="./images/img8.png" />
+                <p>Fig 8</p>
+
+                <img src="./images/img9.png" />
+                <p>Fig 9</p>
+
+                <img src="./images/img10.png" />
+                <p>Fig 10</p>
+              </center>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p align="justify"><b>7. Conclusion & Future Scope:</b></p>
+              <p align="justify">
+                One potential area for future development in the field of gate
+                pass management systems is the integration of advanced
+                technology such as biometric authentication and facial
+                recognition. This could allow for more secure and reliable
+                methods of identifying and verifying the identity of individuals
+                seeking access to the secured area.<br /><br />
+                Another potential area of future development is the integration
+                of gate pass management systems with other security systems,
+                such as CCTV cameras and alarm systems. This could allow for a
+                more comprehensive and coordinated approach to security,
+                providing real-time monitoring and response to potential
+                security threats.<br /><br />
+                Additionally, the use of artificial intelligence and machine
+                learning algorithms could be explored to improve the efficiency
+                and accuracy of gate pass management systems. For example, these
+                technologies could analyze access logs and identify patterns and
+                trends that could indicate potential security risks.<br /><br />
+                Overall, there is great potential for future development and
+                innovation in the field of gate pass management systems. By
+                leveraging advanced technology and integrating with other
+                security systems, gate pass management systems could become even
+                more effective in ensuring the security and safety of secured
+                areas.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p align="justify"><b>References</b></p>
+              <ol>
+                <li>
+                  Prof. Archana S. Banait, Ms. Neha Buwa, Ms. Varsha Jadhav, Ms.
+                  Pooja Ganate, Ms. Shubhangi Dagale, Gate-pass Management
+                  System, MET Bhujbal Knowledge City, Nashik.
+                </li>
+                <li>
+                  Norizan Anwar, Mohamad Noorman Masrek, Yanty Rahayu Rambli,
+                  (2012),Visitor Management system by applying the model of
+                  UTAUT, Faculty of Information Management, Unerversiti
+                  teknologi MARA (UiTM) Selengor, Malaysia (IEEE).
+                </li>
+                <li>
+                  M.N. Noorhuzaimi@Karimah, S. Junaida , A. Noraziah, K. Huei
+                  Chen Fakulti Sistem Komputer Kejuruteraan Perisian.(2009),
+                  Digital Visitor Information Management System (VIMS)
+                  Application and Design. Universiti Malaysia Pahang Karung
+                  Berkunci 12, 25000 Kuantan, Pahang
+                </li>
+                <li>
+                  Prof. Abhay Gaidhani 1 , Suraj Sahijwani 2 , Parag Jain 3 ,
+                  Shantanu Jadhav 4, Ankush Jain 5, (2015), System for Visitor
+                  Pass. Department of Computer Engineering, Sandip, Institute of
+                  Engineering Management, Nashik.
+                </li>
+                <li>
+                  M.N. Noorhuzaimi @ Karimah, S. Junaida , A. Noraziah, K. Huei
+                  Chen Fakulti Sistem Komputer & Kejuruteraan Perisian,E-Visitor
+                  Information Management System(EVIMS) using MyKad,Universiti
+                  Malaysia Pahang.
+                </li>
+                <li>
+                  Sana Said Al-Ghawi, Muna Abdullah Al Rahbi, Dr.S.Asif Hussain,
+                  S.Zahid Hussain,AUTOMATIC TOLL E-TICKETING SYSTEM FOR
+                  TRANSPORTATION SYSTEMS, Middle East College Knowledge Oasis
+                  Muscat, Sultanate of Oman
+                </li>
+                <li>
+                  Romy Jun A. Sunico, Elwin S. Argana, Marife M. Dumale
+                  DEVELOPMENT AND EVALUATION OF AUTOMATED GATE PASS SYSTEM,
+                  College of Engineering and Information Technology, Surigao
+                  State College of Technology, Philippines.
+                </li>
+                <li>
+                  Divya Gaur, Ritvik Sethi, Sanskar Jain, Shubh Vats, D-GATEPASS
+                  SYSTEM, Sharda University, Greater Noida, Uttar Pradesh,
+                  India.
+                </li>
+                <li>
+                  Yogesh S. Watile, Ankita R. Sabal, Harshala V. Gode, Komal B.
+                  Gaulkar, Apurva R. Gawande Datta, Security System for
+                  Industrial Gate And Generation of Gate Pass.Meghe Institute of
+                  Engineering, Technology, and Research, Wardha, India.
+                </li>
+                <li>
+                  Mr. M. Santhanaraj M.E, P. Umadevi, K. Selvanayaki, K .
+                  Shindhumathi, Digital Gate Pass System Using Hybrid
+                  Application KPR Institute of Engineering and Technology,
+                  Coimbatore, India.
+                </li>
+                <li>
+                  .Evizal, Tharek Abd Rahman, Sharul Kamal Abdul Rahim RFID
+                  Vehicle Plate Number (e-Plate) for Tracking and Management
+                  System Universiti Teknologi Malaysia, 81310, Johor, Malaysia.
+                </li>
+                <li>
+                  Yang Xu*, Brighter Agyemang, Shuai Wu and Ming Liu Procedure
+                  Graph Model For Automatic RFID Data Processing Service
+                  Management
+                </li>
+              </ol>
+            </td>
+          </tr>
+        </table>
+      </center>
+    </div>
+  <h3>ADDENDUM:</h3>
+    <p>html: html tag is used to define a page with html structure.</p>
+    <p>head: head is used to define header or title in a html page.</p>
+    <p>meta: meta is used to define the global language of the web page.</p>
+    <p>dev: A division or segment in an HTML text is defined by the div tag, which is commonly used for content organization and layout.</p>
+    <p>body: The body tag denotes the primary content area of an HTML file and contains the visible content that website visitors can see.</p>
+    <p>title: The title tag, which is crucial for both SEO and user experience, specifies the title of an HTML document that is displayed in the browser's title bar or tab.</p>
+    <p>center tag: Previously used to horizontally center content within its container; deprecated in HTML5; CSS is now advised instead.</p>
+    <p>table tag: Describes an HTML table with rows and columns that is used to arrange and display tabular data.</p>
+    <p>td tag: An HTML table's td tag represents a table cell, which is used to store and display data or content in rows and columns.</p>
+    <p>tr tag: establishes a table row in an HTML table by combining a collection of table cells (td>) to produce a horizontal row of information.<p>
+    <p>The ol tag in HTML stands for "Ordered List" and is used to construct numbered lists with each list item (li>) being automatically given a sequential number.</p>
+    <p>The ul tag, which stands for "Unordered List" in HTML, is used to generate a list of items that are each preceded by a bullet or other type of marker (li>).</p>     
+  </body>
 </html>
